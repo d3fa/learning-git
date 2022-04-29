@@ -1,0 +1,93 @@
+token     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
+GIT
+
+
+#Гит конфиг
+git config --global user.name d3fa
+git config --global user.email test@email.com
+git config -l
+
+
+ssh-kygen //создать ссш ключи
+
+git remote set-url origin git@github.com:d3fa/learning-git.git   // Изменить ссылку на репо ssh ссылкой
+git clone git@github.com:d3fa/learning-git.git //Клон репы по ссш
+git remote -v         //посмотреть по какой ссылке работает конкретная репа
+
+
+
+git init        //  для создания локального репозитория название папки будет названием Репы
+
+git status
+
+
+#Staging# 
+# 4 Стадии работы Гита:      Untracked -> Staged -> copy in local repository -> copy to remote repo
+
+git add *     # или для отмены    git restore <filename>
+git commit -m "Commit Comment"gi
+git push origin    #to git hub
+
+git diff --staged   #Разница между стадиями
+
+git log -1 -p   #-1 количество коммитов на экран, -р сами изменения в коммите
+
+
+Бранчи
+git branch   //list Branch - показывает где мы работаем и все бранчи
+git branch dev  //create new branch "DEV"
+git branch checkout dev // выбрать (перейти) бренч dev
+
+git checkout -b dev  //Создать и сразу перейти в новый бранч с название dev
+
+git branch -d dev //Local delete "DEV" branch
+git push origin --delete "my other branch" // Удалить бранч на сервере
+
+git branch main //Перейти в главный бранч
+git merge dev //Замержить бранч DEV to MAIN
+
+
+Гоняем по версиям (коммитам)
+git checkout 240421c2c2f85cc61227ef37bb8dc74e06926ee1     //git log   берем ХЭШ нужного коммита и вставляем в чекаут.
+
+git reset --hard HEAD~2  //Удалить последние №, у нас это равно 2 коммита и откатиться назад по логу. Файлы удаляются 
+git reset --soft HEAD~6   //Удалить 6 коммитов из лога, сами файлы остаются на месте. Слить коммиты...
+git push origin +main //запушить все свое локалье говно на гитхаб, включая удаление файлов. На гите будет как на компе
+git push origin dev //Запушить все в DEV бранч 
+
+git commit --amend //изменить в текстовом редакторе последний коммит, без создания сомого коммита
+git checkout main    //перейти на последнюю версию
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+or create a new repository on the command line
+echo "# learning-git" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/d3fa/learning-git.git
+git push -u origin main
+
+
+or push an existing repository from the command line
+git remote add origin https://github.com/d3fa/learning-git.git
+git branch -M main
+git push -u origin main
+
+
+
+
+

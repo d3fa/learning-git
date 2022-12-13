@@ -24,7 +24,7 @@ git status
 # 4 Стадии работы Гита:      Untracked -> Staged -> copy in local repository -> copy to remote repo
 
 git add *     # или для отмены    git restore <filename>
-git commit -m "Commit Comment"gi
+git commit -m "Commit Comment"
 git push origin    #to git hub
 
 git diff --staged   #Разница между стадиями
@@ -63,8 +63,12 @@ git push origin dev //Запушить все в DEV бранч
 git commit --amend //изменить в текстовом редакторе последний коммит, без создания сомого коммита
 git checkout main    //перейти на последнюю версию
 
-
-
+git tag -a [tag_name] -m [message]  //git tag v2.1.1 -m "patch v2.1.1"
+git push [remote_name] [tag_name]  //For example to push github: git push origin v2.1.1
+git push origin --tags //The command pushes all local tags to the specified origin repository.
+git tag -l   //list tags
+        -f  // --force  Replace an existing tag with the given name (instead of failing)
+        -d  // --delete Delete existing tags with the given names.
 
 
 

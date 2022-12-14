@@ -1,4 +1,5 @@
 GIT
+https://git-scm.com/book/ru/v2/        //Git manual
 https://learngitbranching.js.org/?locale=uk     // Интерактивный сайт для тренинга Гита
 
 #Гит конфиг
@@ -23,13 +24,19 @@ git status
 #Staging# 
 # 4 Стадии работы Гита:      Untracked -> Staged -> copy in local repository -> copy to remote repo
 
-git add *     # или для отмены    git restore <filename>
+# Коммиты Git - Запись изменений в репозиторий https://git-scm.com/book/ru/v2/Основы-Git-Запись-изменений-в-репозиторий
+git add *     # Добавления файлов в индекс отслеживания
+git restore <filename> # Удаление файла-папки из индекса
+
 git commit -m "Commit Comment"
-git push origin    #to git hub
+     git rm --cached README  //Удалить из коммита файл README, но оставить на диске, если он еще не отправлен на сервер
+git push origin    #to github
 
 git diff --staged   #Разница между стадиями
 
 git log -1 -p   #-1 количество коммитов на экран, -р сами изменения в коммите
+git log -4 --pretty=format:"%h %s"
+git log --pretty=oneline
 git log --name-status   //Показать файлы в коммите
 
 Бранчи
@@ -38,6 +45,7 @@ git branch dev  //create new branch "DEV"
 git branch checkout dev // выбрать (перейти) бренч dev
 git branch -f main HEAD~3 //Сделать Мейн ветку на этом коммите
 
+#Git - Перезапись истории, Объединение, Удаление коммитов https://git-scm.com/book/ru/v2/Инструменты-Git-Перезапись-истории
 git rebase
 git rebase -i // Интерактивный ребейс, можно git rebase -i HEAD~3   
 

@@ -33,11 +33,16 @@ git commit -m "Commit Comment"
 git push origin    #to github
 
 git diff --staged   #Разница между стадиями
+git diff --name-only --cached    //список файлов, которые будут добавлены в коммит после git add
+git diff --name-only HEAD^ HEAD   //список имен файлов в последнем коммите.
 
 git log -1 -p   #-1 количество коммитов на экран, -р сами изменения в коммите
 git log -4 --pretty=format:"%h %s"
 git log --pretty=oneline
 git log --name-status   //Показать файлы в коммите
+
+
+
 
 Бранчи
 git branch   //list Branch - показывает где мы работаем и все бранчи

@@ -79,12 +79,15 @@ git push origin dev //Запушить все в DEV бранч
 git commit --amend //изменить в текстовом редакторе последний коммит, без создания сомого коммита
 git checkout main    //перейти на последнюю версию
 
-git tag -a [tag_name] -m [message]  //git tag v2.1.1 -m "patch v2.1.1"
+git tag -a [tag_name] -m [message]  //git tag v0.9.0 -m "OpenCore v0.9.0"
 git push [remote_name] [tag_name]  //For example to push github: git push origin v2.1.1
 git push origin --tags //The command pushes all local tags to the specified origin repository.
 git tag -l   //list tags
         -f  // --force  Replace an existing tag with the given name (instead of failing)
         -d  // --delete Delete existing tags with the given names.
+        
+git tag -d {tag-name}      // Удалить локально тег
+git push origin :refs/tags/{tag-name}   //Удалить Tag на сервере  (git push origin :refs/tags/v0.8.9)
 
 
 

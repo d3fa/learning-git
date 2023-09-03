@@ -5,7 +5,9 @@ https://learngitbranching.js.org/?locale=uk     // Интерактивный с
 #Гит конфиг
 git config --global user.name d3fa
 git config --global user.email test@email.com
-git config -l
+git config -l // list config
+
+git config --global core.excludesfile C:\blah-blah\.gitignore    // Global Git Ignore
 
 
 ssh-kygen //создать ссш ключи
@@ -28,8 +30,10 @@ git status
 git add *     # Добавления файлов в индекс отслеживания
 git restore <filename> # Удаление файла-папки из индекса
 
+
 git commit -m "Commit Comment"
      git rm --cached README  //Удалить из коммита файл README, но оставить на диске, если он еще не отправлен на сервер
+git rm <file>  //Удаляет файл и сразу добавляет изменения в индекс вместо git add <file>
 git push origin    #to github
 
 git diff --staged   #Разница между стадиями
